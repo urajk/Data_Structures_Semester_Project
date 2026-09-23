@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Lib.Data.Structures;
+using DataStructuresProject.UX.ProjectClasses;
+
+namespace DataStructuresProject.UX
+{
+    public partial class CFormTopics : Form
+    {
+        // ----------------------------------------------------------------------------
+        CAlphabetButtonsGrid buttons;
+
+        CJsonDict oDictReference = new CJsonDict();
+        // ----------------------------------------------------------------------------
+        public CFormTopics()
+        {
+            InitializeComponent();
+            createLetterButtons();
+            oDictReference.PopulateDict();
+            this.richTextBox1.Text = PrintDictionary();
+        }
+        // ----------------------------------------------------------------------------
+        private void createLetterButtons()
+        {
+            this.buttons = new CAlphabetButtonsGrid(this.grpLetters, 2);
+            foreach (Button oButton in this.buttons)
+                oButton.Click += DoOnLetterButtonClick;
+        }
+        // ----------------------------------------------------------------------------
+        private void DoOnLetterButtonClick(object sender, EventArgs e)
+        {
+            string sLetter = ((Button)sender).Text;
+            Debug.WriteLine(sLetter);
+        }
+        // ----------------------------------------------------------------------------
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if(this.txtUserInput.Text.Trim() != String.Empty)
+            {
+                this.richTextBox1.Text = oDictReference.SearchKeyValue(this.txtUserInput.Text.Trim().ToLower());
+            }
+            else
+            {
+                this.richTextBox1.Text = PrintDictionary();
+            }
+        }
+        // ----------------------------------------------------------------------------
+        public String ?PrintDictionary()
+        {
+            String sResultString = null;
+            foreach(String key in oDictReference.oSearchArray)
+            {
+                sResultString += key + "\r\n";
+            }
+            return sResultString;
+        }
+    }
+}

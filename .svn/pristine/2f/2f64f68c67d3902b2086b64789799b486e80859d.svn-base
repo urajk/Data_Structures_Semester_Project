@@ -1,0 +1,134 @@
+﻿using DataStructuresProject.UX.ProjectClasses;
+using Lib.Data.Structures;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+namespace DataStructuresProject.UX
+{
+    public partial class CFormQuery : Form
+    {
+        private System.Windows.Forms.ToolTip tooltip;
+
+        // ----------------------------------------------------------------------------
+        String[] test = null;
+        private CTokenGrouping tokenRef = new CTokenGrouping(null);
+        // ----------------------------------------------------------------------------
+        protected CStack<String> UndoStack = new CStack<String>();
+        protected CStack<String> RedoStack = new CStack<String>();
+        // ----------------------------------------------------------------------------
+        public CFormQuery()
+        {
+            InitializeComponent();
+            // Creates the object using a fully qualified class type, and assign properties
+            this.tooltip = new System.Windows.Forms.ToolTip()
+                                {
+                                    InitialDelay = 500,  // mSecs to wait before showing
+                                    AutoPopDelay = 5000, // mSecs to keep showing
+                                    ReshowDelay = 200,
+                                    ShowAlways = true
+                                };
+            // Set the target where the tooltip will be shown and the text to display
+            this.tooltip.SetToolTip(this.picLogo, "Hi! How can I help you?");
+        }
+        // ----------------------------------------------------------------------------
+        private void btnSendMessage_Click(object sender, EventArgs e)
+        {
+            // ----------------------------------------------------------------------------
+            char[] cSeparators = new char[] { ' ', '.', ',', '·', '\t', '\r', '\n' };
+            String[] userInput = txtUserInput.Text.Split(cSeparators, StringSplitOptions.RemoveEmptyEntries);
+            CTokenGrouping tokenGroup = new CTokenGrouping(userInput);
+            // ----------------------------------------------------------------------------
+            this.txtWordsArray.Text = DisplayContents(userInput);
+            Debug.WriteLine(tokenGroup.DisplayUniques());
+            tokenGroup.BubbleSortByOccurences();
+            // ----------------------------------------------------------------------------
+            this.txtTokensArray.Text = tokenGroup.DisplayUniques();
+            this.UndoStack.Push(txtUserInput.Text);
+            this.txtUserInput.Clear();
+            UpdateUndoRedo();
+            // ----------------------------------------------------------------------------
+        }
+        // ----------------------------------------------------------------------------
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if(this.textBox1.Text != null)
+            { 
+                txtTokensArray.Text = tokenRef.DisplaySearchValue(this.textBox1.Text);
+            }
+        }
+        // ----------------------------------------------------------------------------
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+            if(this.UndoStack.ItemCount != 0)
+            {
+                String UndoString = this.UndoStack.Pop();
+                this.RedoStack.Push(txtUserInput.Text);
+                txtUserInput.Text = UndoString;
+                UpdateUndoRedo();
+            }
+        }
+        //----------------------------------------------------------------------------
+        private void btnRedo_Click(object sender, EventArgs e)
+        {
+            if(this.RedoStack.ItemCount != 0)
+            {
+                String RedoString = this.RedoStack.Pop();
+                this.UndoStack.Push(txtUserInput.Text);
+                txtUserInput.Text = RedoString;
+                UpdateUndoRedo();
+            }
+        }
+        //-----------------------------------------------------------------------------
+        public void UpdateUndoRedo()
+        {
+            //--------------------------------------------------------------
+            txtRedoStack.Clear();
+            txtUndoStack.Clear();
+            //--------------------------------------------------------------
+            if (this.UndoStack.ItemCount == 0)
+            {
+                txtUndoStack.Text = "";
+            }
+            else
+            {
+                foreach (String s in this.UndoStack)
+                {
+                    txtUndoStack.Text = txtUndoStack.Text + "\r\n" + s;
+                }
+            }
+            //--------------------------------------------------------------
+            if (this.RedoStack.ItemCount == 0) 
+            {
+                txtRedoStack.Text = "";
+            }
+            else
+            {
+                foreach (String s in this.RedoStack)
+                {
+                    txtRedoStack.Text = txtRedoStack.Text + "\r\n" + s;
+                }
+            }
+            //--------------------------------------------------------------
+        }
+        //-------------------------------------------------------------------------------
+        public string DisplayContents(String[] array)
+        {
+            String DisplayString = "";
+            foreach(String s in array)
+            {
+                DisplayString += s + "\r\n";
+            }
+            return DisplayString;
+        }
+        //-------------------------------------------------------------------------------
+    }
+}

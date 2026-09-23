@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Lib.Data.Structures;
+
+namespace DataStructuresProject.UX.ProjectClasses
+{
+    public class CFileTree
+    {
+        public CFileTree() 
+        { 
+                 
+        }
+        public void BuildFileTree(String p_sPath)
+        {
+            CTreeNode<CFileEntry> oRoot = new CTreeNode<CFileEntry>();
+            oRoot.Value = new CFileEntry(true);
+            oRoot.Value.Path = p_sPath;
+
+            recurseFile(oRoot, 0);
+        }
+
+        public void recurseFile(CTreeNode<CFileEntry> oFile, int p_nDepth)
+        {
+            DirectoryInfo oDirectory = new DirectoryInfo(oFile.Value.Path);
+            DirectoryInfo[] oDirectoryFolders = oDirectory.GetDirectories();
+        }
+    }
+}

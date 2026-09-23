@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DataStructuresProject.UX
+{
+    public partial class CFormTopics : Form
+    {
+        CAlphabetButtonsGrid buttons;
+
+        // ----------------------------------------------------------------------------
+        public CFormTopics()
+        {
+            InitializeComponent();
+            createLetterButtons();
+        }
+        // ----------------------------------------------------------------------------
+        private void createLetterButtons()
+        {
+            this.buttons = new CAlphabetButtonsGrid(this.grpLetters, 2);
+            foreach (Button oButton in this.buttons)
+                oButton.Click += DoOnLetterButtonClick;
+        }
+        // ----------------------------------------------------------------------------
+        private void DoOnLetterButtonClick(object sender, EventArgs e)
+        {
+            string sLetter = ((Button)sender).Text;
+            Debug.WriteLine(sLetter);
+        }
+        // ----------------------------------------------------------------------------
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+        // ----------------------------------------------------------------------------
+    }
+}

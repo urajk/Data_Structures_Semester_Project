@@ -1,0 +1,24 @@
+PARENT;CHILD;CHILD DATA
+Oceania;Fiji;Suva
+Africa;Algeria;Algiers
+North America;Mexico;Mexico City
+Europe;Albania;Tirana
+Africa;Benin;Porto Novo
+Africa;Botswana;Gaborone
+Africa;Burkina Faso;Ouagadougou
+Asia;Afghanistan;Kabul
+Asia;Armenia;Yerevan
+Asia;Azerbaijan;Baku
+Asia;Bahrain;Manama
+Europe;Austria;Vienna
+Europe;Belarus;Minsk
+North America;Canada;Ottawa
+North America;USA;Washington DC
+Africa;Angola;Luanda
+South America;Brazil;Brasilia
+South America;Argentina;Buenos Aires
+South America;Bolivia;Sucre
+Oceania;Australia;Canberra
+Oceania;New Zealand;Wellington
+Oceania;Federated States of Micronesia;Palikir
+Europe;Andorra;Andorra la Vella

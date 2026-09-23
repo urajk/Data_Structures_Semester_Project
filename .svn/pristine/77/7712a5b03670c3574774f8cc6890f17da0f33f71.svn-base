@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Code\\Semester_Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|c:\\code\\semester_project\\datastructuresproject\\ux\\cformqueryrouter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|solutionrelative:datastructuresproject\\ux\\cformqueryrouter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|c:\\code\\semester_project\\datastructuresproject\\cformmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|solutionrelative:datastructuresproject\\cformmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|C:\\Code\\Semester_Project\\datastructuresproject\\ux\\cformqueryrouter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|solutionrelative:datastructuresproject\\ux\\cformqueryrouter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|c:\\code\\semester_project\\datastructuresproject\\ux\\projectclasses\\cquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|solutionrelative:datastructuresproject\\ux\\projectclasses\\cquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CFormQueryRouter.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\Semester_Project\\DataStructuresProject\\UX\\CFormQueryRouter.cs",
+              "RelativeDocumentMoniker": "DataStructuresProject\\UX\\CFormQueryRouter.cs",
+              "ToolTip": "C:\\Code\\Semester_Project\\DataStructuresProject\\UX\\CFormQueryRouter.cs [Design]",
+              "RelativeToolTip": "DataStructuresProject\\UX\\CFormQueryRouter.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T10:36:53.216Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CFormMain.cs",
+              "DocumentMoniker": "C:\\Code\\Semester_Project\\DataStructuresProject\\CFormMain.cs",
+              "RelativeDocumentMoniker": "DataStructuresProject\\CFormMain.cs",
+              "ToolTip": "C:\\Code\\Semester_Project\\DataStructuresProject\\CFormMain.cs",
+              "RelativeToolTip": "DataStructuresProject\\CFormMain.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T10:03:22.759Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CQuery.cs",
+              "DocumentMoniker": "C:\\Code\\Semester_Project\\DataStructuresProject\\UX\\ProjectClasses\\CQuery.cs",
+              "RelativeDocumentMoniker": "DataStructuresProject\\UX\\ProjectClasses\\CQuery.cs",
+              "ToolTip": "C:\\Code\\Semester_Project\\DataStructuresProject\\UX\\ProjectClasses\\CQuery.cs",
+              "RelativeToolTip": "DataStructuresProject\\UX\\ProjectClasses\\CQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T09:33:23.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CFormQueryRouter.cs",
+              "DocumentMoniker": "C:\\Code\\Semester_Project\\DataStructuresProject\\UX\\CFormQueryRouter.cs",
+              "RelativeDocumentMoniker": "DataStructuresProject\\UX\\CFormQueryRouter.cs",
+              "ToolTip": "C:\\Code\\Semester_Project\\DataStructuresProject\\UX\\CFormQueryRouter.cs",
+              "RelativeToolTip": "DataStructuresProject\\UX\\CFormQueryRouter.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAIwCoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T09:29:04.187Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

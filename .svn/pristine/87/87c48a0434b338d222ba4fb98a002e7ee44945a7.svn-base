@@ -1,0 +1,45 @@
+﻿using DataStructuresProject.UX.ProjectClasses;
+using Lib.Data.Structures;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DataStructuresProject.UX
+{
+    public partial class CFormTextFileBase : Form
+    {
+        // ----------------------------------------------------------------------------
+        private CFileTree ofileTree = new CFileTree();
+        // ----------------------------------------------------------------------------
+        public CFormTextFileBase()
+        {
+            InitializeComponent();
+            this.txtUserInput.Text = @"C:\Code\TreeTesting";
+        }
+        // ----------------------------------------------------------------------------
+        public void btnBuild_OnClick(object sender, EventArgs e)
+        {
+            if(txtUserInput.Text.Trim() != null)
+            {
+                ofileTree.BuildFileTree(txtUserInput.Text.Trim());
+            }
+        }
+        // ----------------------------------------------------------------------------
+        public void btnBrowse_OnClick(object sender, EventArgs e)
+        {
+            FolderBrowserDialog oDialog = new FolderBrowserDialog();
+            oDialog.Description = "Select a Folder";
+            if (oDialog.ShowDialog() == DialogResult.OK)
+            { 
+                this.txtUserInput.Text = oDialog.SelectedPath;
+            }
+        }
+        // ----------------------------------------------------------------------------
+    }
+}

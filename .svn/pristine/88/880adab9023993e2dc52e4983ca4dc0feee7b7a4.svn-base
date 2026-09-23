@@ -1,0 +1,148 @@
+﻿using Lib.Data.Structures;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lib.Data.Algorithms
+{
+    public class CTimSort<T> : CAlgorithmForArray<T>
+    {
+        public const int DEFAULT_RUN_SIZE = 32;
+
+        //--------------------------------------------------------------------------
+        public CTimSort() : base()
+        {
+
+        }
+        //--------------------------------------------------------------------------
+        public CTimSort(CArray<T> p_oArray) : base(p_oArray)
+        {
+        }
+        //--------------------------------------------------------------------------
+        protected void insertionSortPartial(int p_nLeft, int p_nRight)
+        {
+            
+            IsFinished = false;
+            Debug.WriteLine($"Insertion sort on array of strings, initial items: {String.Join(",", this.array.Items) }");
+            // Iterate on items, starting from the second to the last item. These are the passes of the algorithm.
+            int nCurrentIndex = p_nLeft + 1;
+            while (nCurrentIndex < p_nRight)
+            {
+                T oCurrentItem = this.array.Items[nCurrentIndex];
+                // This downward loop finds the insert index while moving the items. 
+                // It starts just before the current index of the outer loop
+                int j = nCurrentIndex - 1;
+                while (j >= 0)
+                {
+                    algorithmStep(this.array, nCurrentIndex, j, oCurrentItem.ToString()); //For step-by-step visualization
+
+                    T oPrevItem = this.array.Items[j];
+
+                    // If one of the previous items is lower in order than the current one
+                    // then this will be the insert position
+                    if (compare(this.array.ComparisonBy, oPrevItem, oCurrentItem) < 0)
+                        break;
+
+                    // Moving items to make space for insertion
+                    this.array.Items[j + 1] = oPrevItem;
+                    j--;
+                    Debug.WriteLine($"Pass #{nCurrentIndex}: Moving for insert at j+1={j + 1} items become: {this.array.ToCommaList()}");
+                }
+
+                // The insert position is 0 if the loop finishes normally or other value due to a break
+                this.array.Items[j + 1] = oCurrentItem;
+                nCurrentIndex++;
+                Debug.WriteLine($"Pass #{nCurrentIndex - 1}: Inserting at at j+1={j + 1} items become: {this.array.ToCommaList()}");
+
+                algorithmStep(this.array, nCurrentIndex, j, oCurrentItem.ToString()); //For step-by-step visualization
+            }
+            IsFinished = true;
+        }
+        //--------------------------------------------------------------------------
+        // This function merges the sorted runs
+        protected void merge(int p_nLeftIndex, int m, int p_nRightIndex)
+        {
+            // Split the array into two parts, left and right
+            int nLen1 = m - p_nLeftIndex + 1;
+            int nLen2 = p_nRightIndex - m;
+            T[] oLeftSplit  = new T[nLen1];
+            T[] oRightSplit = new T[nLen2];
+            for (int x = 0; x < nLen1; x++)
+                oLeftSplit[x] = this.array.Items[p_nLeftIndex + x];
+            for (int x = 0; x < nLen2; x++)
+                oRightSplit[x] = this.array.Items[m + 1 + x];
+
+            int i = 0;
+            int j = 0;
+            int k = p_nLeftIndex;
+
+            // After comparing, we merge those two array in a larger sub array
+            while (i < nLen1 && j < nLen2)
+            {
+                if (compare(this.array.ComparisonBy, oLeftSplit[i],  oRightSplit[j]) <= 0)
+                {
+                    this.array.Items[k] = oLeftSplit[i];
+                    i++;
+                }
+                else
+                {
+                    this.array.Items[k] = oRightSplit[j];
+                    j++;
+                }
+                k++;
+            }
+
+            // Copy any remaining elements from the left part
+            while (i < nLen1)
+            {
+                this.array.Items[k] = oLeftSplit[i];
+                k++;
+                i++;
+            }
+
+            // Copy any remaining elements from the right part
+            while (j < nLen2)
+            {
+                this.array.Items[k] = oRightSplit[j];
+                k++;
+                j++;
+            }
+        }
+        //--------------------------------------------------------------------------
+        public void TimSort()
+        {
+            int nItemCount = this.array.ItemCount;
+
+            // Sort individual subarrays of size RUN
+            for (int i = 0; i < nItemCount; i += DEFAULT_RUN_SIZE)
+                insertionSortPartial(i, Math.Min((i + DEFAULT_RUN_SIZE - 1), (nItemCount)));
+
+            // Start merging from default size of run (32) and merge to sizes 64, 128, 256 and so on
+            for (int nRunSize = DEFAULT_RUN_SIZE; nRunSize < nItemCount; nRunSize = 2 * nRunSize)
+            {
+                // After every merge, we increase left index by double the run size
+                for (int p_nLeftIndex = 0; p_nLeftIndex < nItemCount; p_nLeftIndex += 2 * nRunSize)
+                {
+                    // Find ending point of left part, mid+1 is starting point of the right sub part
+                    int nMidIndex = p_nLeftIndex + nRunSize - 1;
+                    int nRightIndex = Math.Min((p_nLeftIndex + 2 * nRunSize - 1), (nItemCount - 1));
+
+                    // Merge parts arr[left.....mid] & arr[mid+1....right]
+                    if (nMidIndex < nRightIndex)
+                        merge(p_nLeftIndex, nMidIndex, nRightIndex);
+                }
+            }
+        }
+        //--------------------------------------------------------------------------     
+        public void TimSort(CArray<T> p_oArray)
+        {
+            this.array = p_oArray;
+            this.TimSort();
+        }
+        //--------------------------------------------------------------------------
+    }
+}

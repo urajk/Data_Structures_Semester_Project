@@ -1,0 +1,164 @@
+﻿namespace DataStructuresProject.UX
+{
+    partial class CFormTopics
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CFormTopics));
+            lblSearch = new Label();
+            btnSearch = new Button();
+            txtUserInput = new TextBox();
+            grpLetters = new GroupBox();
+            lstTwoLetters = new ListBox();
+            richTextBox1 = new RichTextBox();
+            lstTopics = new ListBox();
+            lblLevel2NodeChildrenCount = new Label();
+            lblLevel1NodeChildrenCount = new Label();
+            SuspendLayout();
+            // 
+            // lblSearch
+            // 
+            lblSearch.AutoSize = true;
+            lblSearch.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSearch.Location = new Point(12, 9);
+            lblSearch.Name = "lblSearch";
+            lblSearch.Size = new Size(146, 20);
+            lblSearch.TabIndex = 7;
+            lblSearch.Text = "Search by Topic Title";
+            // 
+            // btnSearch
+            // 
+            btnSearch.Image = (Image)resources.GetObject("btnSearch.Image");
+            btnSearch.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSearch.Location = new Point(529, 30);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(115, 32);
+            btnSearch.TabIndex = 6;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // txtUserInput
+            // 
+            txtUserInput.BackColor = SystemColors.Window;
+            txtUserInput.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtUserInput.Location = new Point(12, 32);
+            txtUserInput.Name = "txtUserInput";
+            txtUserInput.ScrollBars = ScrollBars.Vertical;
+            txtUserInput.Size = new Size(511, 27);
+            txtUserInput.TabIndex = 5;
+            // 
+            // grpLetters
+            // 
+            grpLetters.Location = new Point(12, 65);
+            grpLetters.Name = "grpLetters";
+            grpLetters.Size = new Size(511, 122);
+            grpLetters.TabIndex = 8;
+            grpLetters.TabStop = false;
+            grpLetters.Text = "groupBox1";
+            // 
+            // lstTwoLetters
+            // 
+            lstTwoLetters.BackColor = Color.Cornsilk;
+            lstTwoLetters.FormattingEnabled = true;
+            lstTwoLetters.ItemHeight = 15;
+            lstTwoLetters.Location = new Point(13, 193);
+            lstTwoLetters.Name = "lstTwoLetters";
+            lstTwoLetters.Size = new Size(128, 229);
+            lstTwoLetters.TabIndex = 9;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            richTextBox1.Location = new Point(529, 75);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(410, 348);
+            richTextBox1.TabIndex = 10;
+            richTextBox1.Text = "";
+            // 
+            // lstTopics
+            // 
+            lstTopics.BackColor = Color.OldLace;
+            lstTopics.FormattingEnabled = true;
+            lstTopics.ItemHeight = 15;
+            lstTopics.Location = new Point(147, 194);
+            lstTopics.Name = "lstTopics";
+            lstTopics.Size = new Size(376, 229);
+            lstTopics.TabIndex = 12;
+            // 
+            // lblLevel2NodeChildrenCount
+            // 
+            lblLevel2NodeChildrenCount.AutoSize = true;
+            lblLevel2NodeChildrenCount.Location = new Point(436, 426);
+            lblLevel2NodeChildrenCount.Name = "lblLevel2NodeChildrenCount";
+            lblLevel2NodeChildrenCount.Size = new Size(87, 15);
+            lblLevel2NodeChildrenCount.TabIndex = 13;
+            lblLevel2NodeChildrenCount.Text = "Topics Count: ?";
+            // 
+            // lblLevel1NodeChildrenCount
+            // 
+            lblLevel1NodeChildrenCount.AutoSize = true;
+            lblLevel1NodeChildrenCount.Location = new Point(13, 428);
+            lblLevel1NodeChildrenCount.Name = "lblLevel1NodeChildrenCount";
+            lblLevel1NodeChildrenCount.Size = new Size(128, 15);
+            lblLevel1NodeChildrenCount.TabIndex = 14;
+            lblLevel1NodeChildrenCount.Text = "Subcategories Count: ?";
+            // 
+            // CFormTopics
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(951, 450);
+            Controls.Add(lblLevel1NodeChildrenCount);
+            Controls.Add(lblLevel2NodeChildrenCount);
+            Controls.Add(lstTopics);
+            Controls.Add(richTextBox1);
+            Controls.Add(lstTwoLetters);
+            Controls.Add(grpLetters);
+            Controls.Add(lblSearch);
+            Controls.Add(btnSearch);
+            Controls.Add(txtUserInput);
+            Name = "CFormTopics";
+            Text = "Knowledge Management System (KMS) - Topics";
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private Label lblSearch;
+        private Button btnSearch;
+        private TextBox txtUserInput;
+        private GroupBox grpLetters;
+        private ListBox lstTwoLetters;
+        private RichTextBox richTextBox1;
+        private Label lblCountSubcategories;
+        private ListBox lstTopics;
+        private Label lblLevel2NodeChildrenCount;
+        private Label lblLevel1NodeChildrenCount;
+    }
+}

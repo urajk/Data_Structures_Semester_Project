@@ -1,0 +1,61 @@
+﻿using Lib.Data.Structures;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+
+
+namespace DataStructuresProject.UX.ProjectClasses
+{
+    public class CJsonDict
+    {
+        //------------------------------------------------------------------\\
+        public Dictionary<String, String> oDict = new Dictionary<String, String>();
+        //------------------------------------------------------------------\\
+        public CArrayOrdered<String> oKeys = new CArrayOrdered<String>();          // We need this to not mess up the display
+        public CArrayOrdered<String> oSearchArray = new CArrayOrdered<String>();   // and still be able to do non-case sensitive research
+                                                                                   
+        //------------------------------------------------------------------\\
+        public CJsonDict() 
+        {
+            
+        }
+        //------------------------------------------------------------------\\
+        public void PopulateDict()
+        {
+            using (StreamReader r = new StreamReader(@"Z:\Code\Project\Computer_Science_Glossary.json"))
+            {
+                string json = r.ReadToEnd();
+                oDict = JsonSerializer.Deserialize<Dictionary<String, String>>(json);
+            }
+            PopulateKeysValuesDicts();
+        }
+        //------------------------------------------------------------------\\
+        public String SearchKeyValue(String p_sSearchValue)
+        {
+            try 
+            { 
+                int keyIndex = oSearchArray.FastSearch(p_sSearchValue);
+                String foundKey = oKeys[keyIndex];
+                return oDict[foundKey];
+            } 
+            catch
+            {
+                return "Invalid Search";
+            }
+        }
+        //------------------------------------------------------------------\\
+        public void PopulateKeysValuesDicts()
+        {
+            foreach(String key in oDict.Keys)
+            {
+                oKeys.Add(key);
+                oSearchArray.Add(key.ToLower());
+            }
+        }
+        //------------------------------------------------------------------\\
+    }
+}

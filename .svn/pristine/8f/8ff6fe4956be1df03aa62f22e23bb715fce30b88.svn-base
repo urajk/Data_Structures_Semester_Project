@@ -1,0 +1,46 @@
+using DataStructuresProject.UX;
+using System.Diagnostics;
+
+namespace DataStructuresProject
+{
+    public partial class CFormMain : Form
+    {
+        private CFormQuery? formQuery = null;
+
+        // ----------------------------------------------------------------------------
+        public CFormMain()
+        {
+            InitializeComponent();
+        }
+        // ----------------------------------------------------------------------------
+        private void DoOnAnyCommand(object sender, EventArgs e)
+        {
+            if (sender == btnFormQuery)
+            {
+                // Create the form when it is first needed. This is called lazy initialization
+                if (this.formQuery == null) 
+                    this.formQuery = new CFormQuery();
+                this.formQuery.Show();
+            }
+            else if (sender == btnFormQueryRouter)
+            {
+                CFormQueryRouter form = new CFormQueryRouter();
+                form.Visible = true;
+            }
+            else if (sender == btnTokenizer) 
+            {
+                CFormTokenizer form = new CFormTokenizer();
+                form.Visible = true;
+            }
+            else if (sender == btnTreeRecursion)
+            {
+                CFormTextFileBase form = new CFormTextFileBase();
+                form.Visible = true;
+            }
+
+            //TODO: Buttons for the rest of the forms
+
+        }
+        // ----------------------------------------------------------------------------
+    }
+}

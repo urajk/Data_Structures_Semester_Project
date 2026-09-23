@@ -1,0 +1,165 @@
+﻿namespace DataStructuresProject.UX
+{
+    partial class CFormTextFileBase
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CFormTextFileBase));
+            lblSearch = new Label();
+            btnBrowse = new Button();
+            txtUserInput = new TextBox();
+            btnBuild = new Button();
+            pnlTop = new Panel();
+            pnlBottom = new Panel();
+            lvTextFiles = new ListView();
+            spliVertical = new Splitter();
+            tvFileSystem = new TreeView();
+            pnlTop.SuspendLayout();
+            pnlBottom.SuspendLayout();
+            SuspendLayout();
+            // 
+            // lblSearch
+            // 
+            lblSearch.AutoSize = true;
+            lblSearch.Font = new Font("Segoe UI", 11.25F);
+            lblSearch.Location = new Point(73, 13);
+            lblSearch.Name = "lblSearch";
+            lblSearch.Size = new Size(146, 20);
+            lblSearch.TabIndex = 10;
+            lblSearch.Text = "Search by Topic Title";
+            // 
+            // btnBrowse
+            // 
+            btnBrowse.Image = (Image)resources.GetObject("btnBrowse.Image");
+            btnBrowse.ImageAlign = ContentAlignment.MiddleLeft;
+            btnBrowse.Location = new Point(590, 34);
+            btnBrowse.Name = "btnBrowse";
+            btnBrowse.Size = new Size(115, 32);
+            btnBrowse.TabIndex = 9;
+            btnBrowse.Text = "Browse";
+            btnBrowse.UseVisualStyleBackColor = true;
+            btnBrowse.Click += btnBrowse_OnClick;
+            // 
+            // txtUserInput
+            // 
+            txtUserInput.BackColor = SystemColors.Window;
+            txtUserInput.Font = new Font("Segoe UI", 11.25F);
+            txtUserInput.Location = new Point(73, 36);
+            txtUserInput.Name = "txtUserInput";
+            txtUserInput.ScrollBars = ScrollBars.Vertical;
+            txtUserInput.Size = new Size(511, 27);
+            txtUserInput.TabIndex = 8;
+            // 
+            // btnBuild
+            // 
+            btnBuild.Image = (Image)resources.GetObject("btnBuild.Image");
+            btnBuild.ImageAlign = ContentAlignment.MiddleLeft;
+            btnBuild.Location = new Point(291, 69);
+            btnBuild.Name = "btnBuild";
+            btnBuild.Size = new Size(177, 48);
+            btnBuild.TabIndex = 11;
+            btnBuild.Text = "Build";
+            btnBuild.UseVisualStyleBackColor = true;
+            btnBuild.Click += btnBuild_OnClick;
+            // 
+            // pnlTop
+            // 
+            pnlTop.Controls.Add(lblSearch);
+            pnlTop.Controls.Add(txtUserInput);
+            pnlTop.Controls.Add(btnBrowse);
+            pnlTop.Controls.Add(btnBuild);
+            pnlTop.Dock = DockStyle.Top;
+            pnlTop.Location = new Point(0, 0);
+            pnlTop.Name = "pnlTop";
+            pnlTop.Size = new Size(800, 137);
+            pnlTop.TabIndex = 13;
+            // 
+            // pnlBottom
+            // 
+            pnlBottom.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            pnlBottom.Controls.Add(lvTextFiles);
+            pnlBottom.Controls.Add(spliVertical);
+            pnlBottom.Controls.Add(tvFileSystem);
+            pnlBottom.Location = new Point(3, 143);
+            pnlBottom.Name = "pnlBottom";
+            pnlBottom.Size = new Size(800, 502);
+            pnlBottom.TabIndex = 14;
+            // 
+            // lvTextFiles
+            // 
+            lvTextFiles.Dock = DockStyle.Fill;
+            lvTextFiles.Location = new Point(289, 0);
+            lvTextFiles.Name = "lvTextFiles";
+            lvTextFiles.Size = new Size(511, 502);
+            lvTextFiles.TabIndex = 17;
+            lvTextFiles.UseCompatibleStateImageBehavior = false;
+            // 
+            // spliVertical
+            // 
+            spliVertical.BorderStyle = BorderStyle.Fixed3D;
+            spliVertical.Location = new Point(281, 0);
+            spliVertical.Name = "spliVertical";
+            spliVertical.Size = new Size(8, 502);
+            spliVertical.TabIndex = 18;
+            spliVertical.TabStop = false;
+            // 
+            // tvFileSystem
+            // 
+            tvFileSystem.Dock = DockStyle.Left;
+            tvFileSystem.Location = new Point(0, 0);
+            tvFileSystem.Name = "tvFileSystem";
+            tvFileSystem.Size = new Size(281, 502);
+            tvFileSystem.TabIndex = 16;
+            // 
+            // CFormTextFileBase
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 636);
+            Controls.Add(pnlBottom);
+            Controls.Add(pnlTop);
+            Name = "CFormTextFileBase";
+            Text = "Big Text Data - Filesystem Tree";
+            pnlTop.ResumeLayout(false);
+            pnlTop.PerformLayout();
+            pnlBottom.ResumeLayout(false);
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private Label lblSearch;
+        private Button btnBrowse;
+        private TextBox txtUserInput;
+        private Button btnBuild;
+        private Panel pnlTop;
+        private Panel pnlBottom;
+        private ListView lvTextFiles;
+        private TreeView tvFileSystem;
+        private Splitter spliVertical;
+    }
+}

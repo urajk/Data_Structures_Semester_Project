@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Code\\Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|c:\\code\\project\\datastructuresproject\\ux\\cformtopics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|solutionrelative:datastructuresproject\\ux\\cformtopics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|c:\\code\\project\\datastructuresproject\\ux\\cformtopics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|solutionrelative:datastructuresproject\\ux\\cformtopics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|c:\\code\\project\\datastructuresproject\\ux\\projectclasses\\cjsondict.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|solutionrelative:datastructuresproject\\ux\\projectclasses\\cjsondict.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|c:\\code\\project\\datastructuresproject\\ux\\projectclasses\\ctopicgrouping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|solutionrelative:datastructuresproject\\ux\\projectclasses\\ctopicgrouping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CFormTopics.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\Project\\DataStructuresProject\\UX\\CFormTopics.cs",
+              "RelativeDocumentMoniker": "DataStructuresProject\\UX\\CFormTopics.cs",
+              "ToolTip": "C:\\Code\\Project\\DataStructuresProject\\UX\\CFormTopics.cs [Design]",
+              "RelativeToolTip": "DataStructuresProject\\UX\\CFormTopics.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T11:52:53.887Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CJsonDict.cs",
+              "DocumentMoniker": "C:\\Code\\Project\\DataStructuresProject\\UX\\ProjectClasses\\CJsonDict.cs",
+              "RelativeDocumentMoniker": "DataStructuresProject\\UX\\ProjectClasses\\CJsonDict.cs",
+              "ToolTip": "C:\\Code\\Project\\DataStructuresProject\\UX\\ProjectClasses\\CJsonDict.cs",
+              "RelativeToolTip": "DataStructuresProject\\UX\\ProjectClasses\\CJsonDict.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAhwBIAAACJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T16:24:38.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CFormTopics.cs",
+              "DocumentMoniker": "C:\\Code\\Project\\DataStructuresProject\\UX\\CFormTopics.cs",
+              "RelativeDocumentMoniker": "DataStructuresProject\\UX\\CFormTopics.cs",
+              "ToolTip": "C:\\Code\\Project\\DataStructuresProject\\UX\\CFormTopics.cs",
+              "RelativeToolTip": "DataStructuresProject\\UX\\CFormTopics.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T16:05:49.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CTopicGrouping.cs",
+              "DocumentMoniker": "C:\\Code\\Project\\DataStructuresProject\\UX\\ProjectClasses\\CTopicGrouping.cs",
+              "RelativeDocumentMoniker": "DataStructuresProject\\UX\\ProjectClasses\\CTopicGrouping.cs",
+              "ToolTip": "C:\\Code\\Project\\DataStructuresProject\\UX\\ProjectClasses\\CTopicGrouping.cs",
+              "RelativeToolTip": "DataStructuresProject\\UX\\ProjectClasses\\CTopicGrouping.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAxwGkAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T16:03:34.372Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

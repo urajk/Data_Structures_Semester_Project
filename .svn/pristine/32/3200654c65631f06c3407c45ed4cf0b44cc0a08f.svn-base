@@ -1,0 +1,34 @@
+﻿using DataStructuresProject.UX.ProjectClasses;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
+
+namespace DataStructuresProject.UX
+{
+    public partial class CFormTokenizer : Form
+    {
+        public CFormTokenizer()
+        {
+            InitializeComponent();
+        }
+
+        private void BtnTokenize_OnClick(object sender, EventArgs e)
+        {
+            if(txtUserInput.Text != null)
+            {
+                char[] cSeparators = new char[] { ' ', '.', ',', '·', '\t', '\r', '\n' };
+                String[] textParts = txtUserInput.Text.Split(cSeparators, StringSplitOptions.RemoveEmptyEntries);
+                CTokenizer oTokenizer = new CTokenizer(textParts);
+                txtTokensDict.Text = oTokenizer.TokenDict.ToString();
+                txtTokenSequence.Text = oTokenizer.TurnUserInputToIDs(textParts);
+            }
+        }
+    }
+}

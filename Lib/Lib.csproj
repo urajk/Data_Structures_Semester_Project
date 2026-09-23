@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <VersionPrefix>1.5.2</VersionPrefix>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Title>CS215 Data Structures Library</Title>
+    <Authors>Pantelis I. Kaplanoglou</Authors>
+    <Description>(c) 2024-2025 Pantelis I. Kaplanoglou</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Structures\CLinkedListOrdered.cs" />
+  </ItemGroup>
+
+</Project>

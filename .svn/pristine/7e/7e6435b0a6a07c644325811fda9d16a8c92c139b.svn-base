@@ -1,0 +1,112 @@
+﻿using Lib.Data.Structures;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataStructuresProject.UX.ProjectClasses
+{
+    public class CTokenGrouping
+    {
+        //------------------------------------------------------------------------------------------------------------------------------
+        private CArrayUnordered<CToken> _uniqueTokens = new CArrayUnordered<CToken>();
+        public CArrayUnordered<CToken> UniqueTokens { get { return _uniqueTokens; } }
+        //------------------------------------------------------------------------------------------------------------------------------
+        private CArrayOrdered<String> OrderedTokens = new CArrayOrdered<String>();
+        //------------------------------------------------------------------------------------------------------------------------------
+        public CTokenGrouping(string[] Array) 
+        {
+            CreateOrderedTokensArray(Array);
+            FindUniqueTokens(OrderedTokens);
+        }
+        public void CreateOrderedTokensArray(string[] Array)
+        {
+            foreach(string s in Array)
+            {
+                this.OrderedTokens.Add(s);
+            }
+        }
+        //------------------------------------------------------------------------------------------------------------------------------
+        public void FindUniqueTokens(CArrayOrdered<string> Array)
+        {
+            int currentTokenIndex = 0;
+            int nextTokenIndex = 1;
+            int TokenCounter = 1;
+            while(currentTokenIndex < Array.ItemCount - 1)
+            {
+                if(nextTokenIndex < Array.ItemCount - 1)
+                {
+                    if(Array[nextTokenIndex] == Array[currentTokenIndex])
+                    {
+                        TokenCounter++;
+                        currentTokenIndex++;
+                        nextTokenIndex++;
+                    }
+                    else
+                    {
+                        CToken token = new CToken(Array[currentTokenIndex], TokenCounter);
+                        this._uniqueTokens.Add(token);
+
+                        TokenCounter = 1;
+                        currentTokenIndex++;
+                        nextTokenIndex++;
+                    }
+                }
+                else if(nextTokenIndex > Array.ItemCount - 1)
+                {
+                    // This is needed for when the nextTokenIndex becomes larger than the array's length and goes out of bounds.
+                    // At that instance we make one final group with the saved TokenCounter value up to that point.
+                    CToken token = new CToken(Array[currentTokenIndex], TokenCounter);
+                }
+            }
+        }
+        //------------------------------------------------------------------------------------------------------------------------------
+        public string DisplayUniques()
+        {
+            String DisplayString = "";
+
+            foreach (CToken token in UniqueTokens)
+            {
+                DisplayString += token.ToString() + "\r\n";
+            }
+
+            if (UniqueTokens.ItemCount == 0)
+            {
+                return "this is not okay";
+            }
+
+            return DisplayString;
+        }
+        //------------------------------------------------------------------------------------------------------------------------------
+        public string DisplaySearchValue(string p_sSearchValue)
+        {
+            foreach (CToken token in UniqueTokens)
+            {
+                if (p_sSearchValue == token.Text)
+                {
+                    return token.ToString();
+                }
+            }
+            return "No token was found matching the search value.";
+        }
+        //------------------------------------------------------------------------------------------------------------------------------
+        public void BubbleSortByOccurences()
+        {
+            for (int i = 0; i < UniqueTokens.ItemCount - 1; i++)
+            {
+                for (int j = 0; j < UniqueTokens.ItemCount - i - 1; j++)
+                {
+                    if (UniqueTokens.Items[j].TokenOccurences > UniqueTokens.Items[j + 1].TokenOccurences)
+                    {
+                        CToken temp = UniqueTokens[j];
+                        _uniqueTokens[j] = _uniqueTokens[j + 1];
+                        _uniqueTokens[j + 1] = temp;
+                    }
+                }
+            }
+        }
+        //------------------------------------------------------------------------------------------------------------------------------
+    }
+}

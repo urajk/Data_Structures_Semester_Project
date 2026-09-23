@@ -1,0 +1,106 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+using Lib.Data.Structures;
+
+namespace DataStructuresProject.UX
+{
+    public class CToken : IComparable<CToken>
+    {
+        //--------------------------------------------------------------------------------
+        private String _text { get; set; }
+        private int _tokenOccurences { get; set; } = 0;
+        private int _tokenID { get; }
+        private static int IDIncrementer = 001;
+        //--------------------------------------------------------------------------------
+        private CArrayUnordered<CToken> UniqueTokens = new CArrayUnordered<CToken>();
+        private CArrayUnordered<int> Occurences = new CArrayUnordered<int>();
+        //--------------------------------------------------------------------------------
+        public CToken(String name, int count)
+        {
+            if(count != 0)
+            {
+                this._text = name;
+                this._tokenOccurences = count;
+                this._tokenID = IDIncrementer;
+                Debug.WriteLine(this._text);
+                Debug.WriteLine(this._tokenOccurences);
+                Debug.WriteLine(this._tokenID);
+                Debug.WriteLine("Object Created");
+                UniqueTokens.Add(this);
+                Debug.WriteLine("Object Added");
+                Occurences.Add(this._tokenOccurences);
+                IDIncrementer++;
+            }
+        }
+        //--------------------------------------------------------------------------------
+        public void BubbleSortByOccurences()
+        {
+            for (int i = 0; i < UniqueTokens.ItemCount - 1; i++)
+            {
+                for (int j = 0; j < UniqueTokens.ItemCount - i - 1; j++)
+                {
+                    if (UniqueTokens.Items[j]._tokenOccurences > UniqueTokens.Items[j + 1]._tokenOccurences)
+                    {
+                        CToken temp = UniqueTokens[j];
+                        UniqueTokens[j] = UniqueTokens[j + 1];
+                        UniqueTokens[j + 1] = temp;
+                    }
+                }
+            }
+        }
+        //--------------------------------------------------------------------------------
+        public string DisplayUniques()
+        {
+            String DisplayString = "";
+            
+            foreach (CToken token in UniqueTokens.Items)
+            {
+                DisplayString += token.ToString() + "\r\n";
+            }
+
+            if(UniqueTokens.ItemCount == 0)
+            {
+                return "this is not okay";
+            }
+
+            return DisplayString;
+        }
+        public string DisplaySearchValue(string p_sSearchValue)
+        {
+            bool bfound = false;
+            foreach (CToken token in UniqueTokens.Items)
+            {
+                if(p_sSearchValue == token._text)
+                {
+                    bfound = true;
+                    return token.ToString();
+                }
+            }
+            return "No token was found matching the search value.";
+            
+        }
+        //--------------------------------------------------------------------------------
+        public int CompareTo(CToken? other)
+        {
+            if(this._tokenOccurences > other._tokenOccurences)
+            {
+                return 1;
+            }
+            else if(this._tokenOccurences < other._tokenOccurences)
+            {
+                return -1;
+            }
+            else { return 0; }
+        }
+
+        public override string ToString()
+        {
+            return "#" + this._tokenID + " Token: " + this._text + " Occurences " + this._tokenOccurences;
+        }
+    }
+}

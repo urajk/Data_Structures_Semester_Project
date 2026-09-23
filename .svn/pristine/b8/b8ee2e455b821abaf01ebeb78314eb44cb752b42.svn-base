@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Lib.Data.Structures;
+
+namespace DataStructuresProject.UX.ProjectClasses
+{
+    public class CTokenizer
+    {
+        //------------------------------------------------------------------------------------------------------------------------------
+        private CDictionary<String, CToken> _tokenDict = new CDictionary<String, CToken>();
+        public CDictionary<String, CToken> TokenDict { get { return _tokenDict; } }
+        //------------------------------------------------------------------------------------------------------------------------------
+        private CHashTable<String, CToken> _tokenTable = new CHashTable<String, CToken>();
+        public CHashTable<String, CToken> TokenTable { get { return _tokenTable; } }
+        //------------------------------------------------------------------------------------------------------------------------------
+
+        //------------------------------------------------------------------------------------------------------------------------------
+        public CTokenizer(String[] Array)
+        {
+            CTokenGrouping tokenGroup = new CTokenGrouping(Array);
+            PopulateUniqueTokensDict(tokenGroup.UniqueTokens);
+        }
+        //------------------------------------------------------------------------------------------------------------------------------
+        public void PopulateUniqueTokensDict(CArrayUnordered<CToken> Array)
+        {
+            foreach(CToken token in Array)
+            {
+                TokenDict[token.Text] = token;
+                TokenTable[token.Text] = token;
+            }
+        }
+        //------------------------------------------------------------------------------------------------------------------------------
+        public String TurnUserInputToIDs(String[] Array)
+        {
+            String sResultString = "";
+            foreach(String s in Array)
+            {
+                sResultString +=  $"{TokenDict[s].TokenID},";
+            }
+            return sResultString;
+        }
+        //------------------------------------------------------------------------------------------------------------------------------
+    }
+}

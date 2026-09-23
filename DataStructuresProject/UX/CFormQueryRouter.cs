@@ -1,0 +1,157 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Lib.Data.Structures;
+using DataStructuresProject.UX.ProjectClasses;
+using System.Timers;
+
+namespace DataStructuresProject.UX
+{
+    public partial class CFormQueryRouter : Form
+    {
+        // ----------------------------------------------------------------------------
+        private CQueue<CQuery> queries = new CQueue<CQuery>(); // Main query queue
+        // ----------------------------------------------------------------------------
+        private CQueue<CQuery> CB1Queue = new CQueue<CQuery>();
+        private CQueue<CQuery> CB2Queue = new CQueue<CQuery>(); // 4 Different chatbot queues
+        private CQueue<CQuery> CB3Queue = new CQueue<CQuery>();
+        private CQueue<CQuery> CB4Queue = new CQueue<CQuery>();
+        // ----------------------------------------------------------------------------
+        public CFormQueryRouter()
+        {
+            InitializeComponent();
+
+            System.Timers.Timer timer = new System.Timers.Timer(10000);
+            timer.AutoReset = true;
+            timer.Enabled = true;
+
+            timer.Elapsed += OnTimedEvent;
+        }
+        // ----------------------------------------------------------------------------
+        private void btnSimulate_Click(object sender, EventArgs e)
+        {
+            QuerySimulation();
+        }
+        // ----------------------------------------------------------------------------
+        private void DoOnChatBot1_Click(object sender, EventArgs e)
+        {
+            CQuery Query = CB1Queue.Dequeue();
+
+            txtID1.Text = Query.Id.ToString();
+
+            txtTimestamp1.Text = Query.Date.ToString();
+
+            UpdateTextFields();
+        }
+        private void DoOnChatBot2_Click(object sender, EventArgs e)
+        {
+            CQuery Query = CB2Queue.Dequeue();
+
+            txtID2.Text = Query.Id.ToString();
+
+            txtTimestamp2.Text = Query.Date.ToString();
+
+            UpdateTextFields();
+        }
+        private void DoOnChatBot3_Click(object sender, EventArgs e)
+        {
+            CQuery Query = CB3Queue.Dequeue();
+
+            txtID3.Text = Query.Id.ToString();
+
+            txtTimestamp3.Text = Query.Date.ToString();
+
+            UpdateTextFields();
+        }
+        private void DoOnChatBot4_Click(object sender, EventArgs e)
+        {
+            CQuery Query = CB4Queue.Dequeue();
+
+            txtID4.Text = Query.Id.ToString();
+
+            txtTimestamp4.Text = Query.Date.ToString();
+
+            UpdateTextFields();
+        }
+        private void OnTimedEvent(object sender, EventArgs e)
+        {
+            BalanceQueryLoad();
+        }
+        // ----------------------------------------------------------------------------
+        public void QuerySimulation()
+        {
+            CQuery Query1 = new CQuery("This is a query i like");
+            CQuery Query2 = new CQuery("Is CS215 a difficult lecture?");
+            CQuery Query3 = new CQuery("Hi there! How are you today?");
+            CQuery Query4 = new CQuery("Who invented the telephone?");
+            CQuery Query5 = new CQuery("What’s the capital of Japan?");
+            CQuery Query6 = new CQuery("Explain photosynthesis in simple terms.");
+            CQuery Query7 = new CQuery("Can you set a reminder for me to drink water every hour?");
+            CQuery Query8 = new CQuery("Give me three tips for staying focused while studying.");
+            CQuery Query9 = new CQuery("Write a short poem about the rain.");
+            CQuery Query10 = new CQuery("Describe what the future of AI might look like.");
+
+            queries.Enqueue(Query1);
+            queries.Enqueue(Query2);
+            queries.Enqueue(Query3);
+            queries.Enqueue(Query4);
+            queries.Enqueue(Query5);
+            queries.Enqueue(Query6);
+            queries.Enqueue(Query7);
+            queries.Enqueue(Query8);
+            queries.Enqueue(Query9);
+            queries.Enqueue(Query10);
+
+            UpdateTextFields();
+        }
+        // ----------------------------------------------------------------------------
+        public string DisplayQueueContent(CQueue<CQuery> Queue)
+        {
+            String sResult = "";
+            foreach(CQuery q in Queue)
+            {
+                sResult += q.ToString() + "\r\n";
+            }
+            return sResult;
+        }
+        // ----------------------------------------------------------------------------
+        public void BalanceQueryLoad()
+        {
+            if(CB1Queue.ItemCount < 3)
+            {
+                CB1Queue.Enqueue(queries.Dequeue());
+            }
+            if (CB2Queue.ItemCount < 3)
+            {
+                CB2Queue.Enqueue(queries.Dequeue());
+            }
+            if (CB3Queue.ItemCount < 3)
+            {
+                CB3Queue.Enqueue(queries.Dequeue());
+            }
+            if (CB4Queue.ItemCount < 3)
+            {
+                CB4Queue.Enqueue(queries.Dequeue());
+            }
+            UpdateTextFields();
+        }
+        // ----------------------------------------------------------------------------
+        public void UpdateTextFields()
+        {
+            txtQueryQueue.Text = DisplayQueueContent(queries);
+            txtChatbot1Queue.Text = DisplayQueueContent(CB1Queue);
+            txtChatbot2Queue.Text = DisplayQueueContent(CB2Queue);
+            txtChatbot3Queue.Text = DisplayQueueContent(CB3Queue);
+            txtChatbot4Queue.Text = DisplayQueueContent(CB4Queue);
+        }
+        // ----------------------------------------------------------------------------
+    }
+}

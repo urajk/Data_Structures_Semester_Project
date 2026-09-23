@@ -1,0 +1,55 @@
+﻿using Lib.Data.Structures;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataStructuresProject.UX.ProjectClasses
+{
+    public class CTokenGrouping
+    {
+        //------------------------------------------------------------------------------------------------------------------------------
+        public CTokenGrouping(CArrayOrdered<string> Array) 
+        { 
+            FindUniqueTokens(Array);
+        }
+        //------------------------------------------------------------------------------------------------------------------------------
+        public void FindUniqueTokens(CArrayOrdered<string> Array)
+        {
+            int currentTokenIndex = 0;
+            int nextTokenIndex = 1;
+            int TokenCounter = 1;
+            while(currentTokenIndex < Array.ItemCount - 1)
+            {
+                if(nextTokenIndex < Array.ItemCount - 1)
+                {
+                    if(Array[nextTokenIndex] == Array[currentTokenIndex])
+                    {
+                        TokenCounter++;
+                        currentTokenIndex++;
+                        nextTokenIndex++;
+                    }
+                    else
+                    {
+                        Debug.WriteLine("stuff is happening");
+                        Debug.WriteLine(Array[currentTokenIndex]);
+                        Debug.WriteLine(TokenCounter);
+                        CToken token = new CToken(Array[currentTokenIndex], TokenCounter);
+                        TokenCounter = 1;
+                        currentTokenIndex++;
+                        nextTokenIndex++;
+                    }
+                }
+                else if(nextTokenIndex > Array.ItemCount - 1)
+                {
+                    // This is needed for when the nextTokenIndex becomes larger than the array's lenght and goes out of bounds
+                    // At that instance we make one final group with the saved TokenCounter value up to that point
+                    CToken token = new CToken(Array[currentTokenIndex], TokenCounter);
+                }
+            }
+        }
+        //------------------------------------------------------------------------------------------------------------------------------
+    }
+}

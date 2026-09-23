@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Code\\Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|c:\\code\\project\\datastructuresproject\\ux\\cformtextfilebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|solutionrelative:datastructuresproject\\ux\\cformtextfilebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|c:\\code\\project\\datastructuresproject\\ux\\projectclasses\\cfiletree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|solutionrelative:datastructuresproject\\ux\\projectclasses\\cfiletree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|C:\\Code\\Project\\datastructuresproject\\ux\\cformtextfilebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|solutionrelative:datastructuresproject\\ux\\cformtextfilebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|c:\\code\\project\\datastructuresproject\\ux\\projectclasses\\cfileentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F731DCC4-685D-4FAB-B89E-086E794402BE}|DataStructuresProject\\DataStructuresProject.csproj|solutionrelative:datastructuresproject\\ux\\projectclasses\\cfileentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CFormTextFileBase.cs [Design]",
+              "DocumentMoniker": "C:\\Code\\Project\\DataStructuresProject\\UX\\CFormTextFileBase.cs",
+              "RelativeDocumentMoniker": "DataStructuresProject\\UX\\CFormTextFileBase.cs",
+              "ToolTip": "C:\\Code\\Project\\DataStructuresProject\\UX\\CFormTextFileBase.cs [Design]*",
+              "RelativeToolTip": "DataStructuresProject\\UX\\CFormTextFileBase.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T11:45:54.112Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CFileEntry.cs",
+              "DocumentMoniker": "C:\\Code\\Project\\DataStructuresProject\\UX\\ProjectClasses\\CFileEntry.cs",
+              "RelativeDocumentMoniker": "DataStructuresProject\\UX\\ProjectClasses\\CFileEntry.cs",
+              "ToolTip": "C:\\Code\\Project\\DataStructuresProject\\UX\\ProjectClasses\\CFileEntry.cs",
+              "RelativeToolTip": "DataStructuresProject\\UX\\ProjectClasses\\CFileEntry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-16T12:10:59.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CFormTextFileBase.cs",
+              "DocumentMoniker": "C:\\Code\\Project\\DataStructuresProject\\UX\\CFormTextFileBase.cs",
+              "RelativeDocumentMoniker": "DataStructuresProject\\UX\\CFormTextFileBase.cs",
+              "ToolTip": "C:\\Code\\Project\\DataStructuresProject\\UX\\CFormTextFileBase.cs*",
+              "RelativeToolTip": "DataStructuresProject\\UX\\CFormTextFileBase.cs*",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T11:45:56.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CFileTree.cs",
+              "DocumentMoniker": "C:\\Code\\Project\\DataStructuresProject\\UX\\ProjectClasses\\CFileTree.cs",
+              "RelativeDocumentMoniker": "DataStructuresProject\\UX\\ProjectClasses\\CFileTree.cs",
+              "ToolTip": "C:\\Code\\Project\\DataStructuresProject\\UX\\ProjectClasses\\CFileTree.cs",
+              "RelativeToolTip": "DataStructuresProject\\UX\\ProjectClasses\\CFileTree.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T11:44:58.157Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
